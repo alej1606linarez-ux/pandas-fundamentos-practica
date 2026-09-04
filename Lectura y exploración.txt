@@ -1,0 +1,82 @@
+PANDAS 
+
+8/18/26
+
+Instalé y probé las líneas:
+
+- head(3)
+- describe()
+- info()
+
+Resultado: Una mini tabla de excel.
+
+vendedor region producto  monto
+0      Ana  Norte   Laptop   1200
+1   Carlos    Sur    Mouse     25
+2    Maria  Norte  Teclado     75
+             monto
+count     7.000000
+mean    536.428571
+std     536.265748
+min      25.000000
+25%      50.000000
+50%     350.000000
+75%    1040.000000
+max    1200.000000
+<class 'pandas.DataFrame'>
+RangeIndex: 7 entries, 0 to 6
+Data columns (total 4 columns):
+ #   Column    Non-Null Count  Dtype
+---  ------    --------------  -----
+ 0   vendedor  7 non-null      str  
+ 1   region    7 non-null      str  
+ 2   producto  7 non-null      str  
+ 3   monto     7 non-null      int64
+dtypes: int64(1), str(3)
+memory usage: 356.0 bytes
+
+Según Claude:
+
+- head(3) — muestra las primeras 3 filas con índice (0, 1, 2)
+- describe() — solo analiza columnas numéricas (monto). Te da count, mean, min, max y percentiles automáticamente
+- info() — muestra la estructura: 7 filas, 4 columnas, tipos de datos (str y int64), y que no hay valores nulos (7 non-null en todas)
+
+info() es lo primero que miras cuando recibes un dataset nuevo en un trabajo real — te dice inmediatamente si hay nulos, qué tipos de datos tienes, y cuántas filas hay.
+
+Básicos de Pandas y para qué sirven:
+
+Función	Para qué sirve
+pd.read_csv()	Leer archivos CSV como tabla
+df.head()	Ver primeras filas
+df.info()	Ver estructura y tipos de datos
+df.describe()	Estadísticas básicas de columnas numéricas
+df[df["col"] > valor]	Filtrar filas por condición
+df.groupby()	Agrupar y calcular por categoría
+df.sort_values()	Ordenar por columna
+df.dropna()	Eliminar filas con valores nulos
+df.fillna()	Rellenar valores nulos
+df["col"].value_counts()	Contar cuántas veces aparece cada valor
+pd.merge()	Combinar dos tablas
+df.to_csv()	Exportar resultado a CSV
+
+NOCHE:
+
+- Por qué me sirve ver estructuras/ tipos de datos (str y int64), count, mean, min, max, percentiles y nulos.
+
+- Desglosa los básicos de Pandas para que pueda entender qué significa y qué hace cada parte de su sintaxis. Hay algunas que quizás logre asumir porque sé inglés, pero quiero entender al 100% a qué me refiero cuando estoy siguiendo la estructura de sintaxis porque a la hora de escribir mi código quizás me ayude a flexibilizar y entender mejor cómo hacer variantes.
+
+- Cómo se conserva la empleabilidad en el data analysis si parte de su labor es automatizar (lo que me hace pensar que eventualmente no habrá flujo manejable manualmente)?
+
+- Cómo puedo entender teóricamente cómo representar dashboards? Tengo cierto conocimiento para hacer gráficas (muy básico, por haberlas visto tantas veces en el pasado y porque leí un poco algo al respecto en un libro de matemáticas)? 
+
+8/19/26
+
+- Repasé teoría y contexto de sintaxis básica
+
+- Práctica de filtrado sencillo por región y condición.
+
+- Cuando se practica el filtrado, se usa la sintaxis con el siguiente contexto/formato: df[df["nombre_de_columna"] == "valor_a_filtrar"]. En este caso era region > Norte. 
+
+- Aprendi la diferencia de and y & entre Python general y Pandas 
+
+
